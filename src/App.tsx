@@ -1,5 +1,11 @@
+import Button from './components/Button';
+
 const App = () => {
-  return <div>App</div>;
+  return (
+    <>
+      <Button />
+    </>
+  );
 };
 
 export default App;
