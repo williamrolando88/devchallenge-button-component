@@ -2,9 +2,10 @@ import React from 'react';
 
 interface ButtonProps {
   color?: string;
+  size?: string;
 }
 
-const Button = ({ color }: ButtonProps) => {
+const Button = ({ color, size }: ButtonProps) => {
   const defineColor = () => {
     switch (color) {
       case 'primary':
@@ -18,8 +19,21 @@ const Button = ({ color }: ButtonProps) => {
     }
   };
 
+  const defineSize = () => {
+    switch (size) {
+      case 'sm':
+        return 'sm';
+      case 'md':
+        return 'md';
+      case 'lg':
+        return 'lg';
+      default:
+        return 'md';
+    }
+  };
+
   const buttonClasses = () => {
-    return [defineColor()].join(' ');
+    return [defineColor(), defineSize()].join(' ');
   };
   return <button className={buttonClasses()}>Button</button>;
 };
