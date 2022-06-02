@@ -5,6 +5,8 @@ interface ButtonProps {
   color?: 'primary' | 'secondary' | 'danger' | 'default';
   size?: 'sm' | 'md' | 'lg';
   variant?: 'outline' | 'text';
+  startIcon?: 'home' | 'search' | 'settings' | 'favorite' | 'refresh';
+  endIcon?: 'home' | 'search' | 'settings' | 'favorite' | 'refresh';
   disableShadow?: true;
   disabled?: true;
 }
@@ -15,6 +17,8 @@ const Button = ({
   disableShadow,
   variant,
   disabled,
+  startIcon,
+  endIcon,
   children,
 }: ButtonProps) => {
   const defineColor = () => {
@@ -77,9 +81,11 @@ const Button = ({
   };
   return (
     <button className={buttonClasses()}>
-      <span className="material-symbols-outlined">home</span>
+      {startIcon && (
+        <span className="material-symbols-outlined">{startIcon}</span>
+      )}
       <span>{children}</span>
-      <span className="material-symbols-outlined">home</span>
+      {endIcon && <span className="material-symbols-outlined">{endIcon}</span>}
     </button>
   );
 };
