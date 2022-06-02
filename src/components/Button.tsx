@@ -1,6 +1,7 @@
 import React from 'react';
 
 interface ButtonProps {
+  children: string;
   color?: 'primary' | 'secondary' | 'danger' | 'default';
   size?: 'sm' | 'md' | 'lg';
   variant?: 'outline' | 'text';
@@ -14,6 +15,7 @@ const Button = ({
   disableShadow,
   variant,
   disabled,
+  children,
 }: ButtonProps) => {
   const defineColor = () => {
     switch (color) {
@@ -73,7 +75,7 @@ const Button = ({
       ' '
     );
   };
-  return <button className={buttonClasses()}>Button</button>;
+  return <button className={buttonClasses()}>{children}</button>;
 };
 
 export default Button;

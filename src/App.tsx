@@ -3,7 +3,7 @@ import Button from './components/Button';
 const App = () => {
   return (
     <>
-      <Button disabled />
+      <Button>Hola</Button>
     </>
   );
 };
