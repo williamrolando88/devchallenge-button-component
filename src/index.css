@@ -10,10 +10,19 @@ button {
   border: none;
   border-radius: 6px;
   padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 20px;
 }
 
 .no-shadow {
   box-shadow: none !important;
+}
+
+.material-symbols-outlined {
+  font-size: 25px;
 }
 
 /* *Disabled attribute */
