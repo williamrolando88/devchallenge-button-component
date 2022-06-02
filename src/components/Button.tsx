@@ -3,9 +3,10 @@ import React from 'react';
 interface ButtonProps {
   color?: string;
   size?: string;
+  disableShadow?: true;
 }
 
-const Button = ({ color, size }: ButtonProps) => {
+const Button = ({ color, size, disableShadow }: ButtonProps) => {
   const defineColor = () => {
     switch (color) {
       case 'primary':
@@ -32,8 +33,17 @@ const Button = ({ color, size }: ButtonProps) => {
     }
   };
 
+  const defineShadow = () => {
+    switch (disableShadow) {
+      case true:
+        return;
+      default:
+        return 'shadow';
+    }
+  };
+
   const buttonClasses = () => {
-    return [defineColor(), defineSize()].join(' ');
+    return [defineColor(), defineSize(), defineShadow()].join(' ');
   };
   return <button className={buttonClasses()}>Button</button>;
 };
