@@ -75,7 +75,13 @@ const Button = ({
       ' '
     );
   };
-  return <button className={buttonClasses()}>{children}</button>;
+  return (
+    <button className={buttonClasses()}>
+      <span className="material-symbols-outlined">home</span>
+      <span>{children}</span>
+      <span className="material-symbols-outlined">home</span>
+    </button>
+  );
 };
 
 export default Button;
