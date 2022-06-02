@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface ButtonProps {
-  color?: 'primary' | 'secondary' | 'danger';
+  color?: 'primary' | 'secondary' | 'danger' | 'default';
   size?: 'sm' | 'md' | 'lg';
   disableShadow?: true;
   variant?: 'outline' | 'text';
@@ -46,16 +46,18 @@ const Button = ({ color, size, disableShadow, variant }: ButtonProps) => {
   const defineVariant = () => {
     switch (variant) {
       case 'outline':
-        return;
+        return 'outline no-shadow';
       case 'text':
-        return;
+        return 'text no-shadow';
       default:
         return;
     }
   };
 
   const buttonClasses = () => {
-    return [defineColor(), defineSize(), defineShadow()].join(' ');
+    return [defineColor(), defineSize(), defineShadow(), defineVariant()].join(
+      ' '
+    );
   };
   return <button className={buttonClasses()}>Button</button>;
 };

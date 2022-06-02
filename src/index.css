@@ -11,6 +11,29 @@ button {
   border-radius: 0.25rem;
 }
 
+.no-shadow {
+  box-shadow: none !important;
+}
+
+/* *Variant definition */
+.outline {
+  background-color: transparent !important;
+  border: 1px solid #3d5afe;
+  color: #3d5afe;
+}
+
+.text {
+  background-color: transparent !important;
+  color: #3d5afe;
+}
+
+.outline:hover,
+.outline:focus,
+.text:hover,
+.text:focus {
+  background-color: rgba(41, 98, 255, 0.1) !important;
+}
+
 /* *Shadow definition */
 .shadow {
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
