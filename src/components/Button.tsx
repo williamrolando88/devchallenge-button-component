@@ -3,11 +3,18 @@ import React from 'react';
 interface ButtonProps {
   color?: 'primary' | 'secondary' | 'danger' | 'default';
   size?: 'sm' | 'md' | 'lg';
-  disableShadow?: true;
   variant?: 'outline' | 'text';
+  disableShadow?: true;
+  disabled?: true;
 }
 
-const Button = ({ color, size, disableShadow, variant }: ButtonProps) => {
+const Button = ({
+  color,
+  size,
+  disableShadow,
+  variant,
+  disabled,
+}: ButtonProps) => {
   const defineColor = () => {
     switch (color) {
       case 'primary':
@@ -54,7 +61,14 @@ const Button = ({ color, size, disableShadow, variant }: ButtonProps) => {
     }
   };
 
+  const defineDisabled = () => {
+    if (variant === 'text' && disabled) return 'disabled-text';
+    if (disabled) return 'disabled';
+  };
+
   const buttonClasses = () => {
+    if (disabled) return defineDisabled();
+
     return [defineColor(), defineSize(), defineShadow(), defineVariant()].join(
       ' '
     );
