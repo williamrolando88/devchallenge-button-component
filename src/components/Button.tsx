@@ -1,12 +1,13 @@
 import React from 'react';
 
 interface ButtonProps {
-  color?: string;
-  size?: string;
+  color?: 'primary' | 'secondary' | 'danger' | 'default';
+  size?: 'sm' | 'md' | 'lg';
   disableShadow?: true;
+  variant?: 'outline' | 'text';
 }
 
-const Button = ({ color, size, disableShadow }: ButtonProps) => {
+const Button = ({ color, size, disableShadow, variant }: ButtonProps) => {
   const defineColor = () => {
     switch (color) {
       case 'primary':
@@ -42,8 +43,21 @@ const Button = ({ color, size, disableShadow }: ButtonProps) => {
     }
   };
 
+  const defineVariant = () => {
+    switch (variant) {
+      case 'outline':
+        return 'outline no-shadow';
+      case 'text':
+        return 'text no-shadow';
+      default:
+        return;
+    }
+  };
+
   const buttonClasses = () => {
-    return [defineColor(), defineSize(), defineShadow()].join(' ');
+    return [defineColor(), defineSize(), defineShadow(), defineVariant()].join(
+      ' '
+    );
   };
   return <button className={buttonClasses()}>Button</button>;
 };
