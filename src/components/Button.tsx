@@ -2,9 +2,10 @@ import React from 'react';
 
 interface ButtonProps {
   color?: string;
+  size?: string;
 }
 
-const Button = ({ color }: ButtonProps) => {
+const Button = ({ color, size }: ButtonProps) => {
   const defineColor = () => {
     switch (color) {
       case 'primary':
