@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'Noto';
+  src: url(fonts/NotoSansJP-Medium.otf);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Noto';
+}
+
+.color-primary {
+  background-color: #2962ff;
+}
+
+.color-primary:hover,
+.color-primary:focus {
+  background-color: #0039cb;
+}
+
+.color-default {
+  background-color: #e0e0e0;
+}
+
+.color-default:hover,
+.color-default:focus {
+  background-color: #aeaeae;
+}
+
+.color-secondary {
+  background-color: #455a64;
+}
+
+.color-secondary:hover,
+.color-secondary:focus {
+  background-color: #1c313a;
+}
+
+.color-danger {
+  background-color: #d32f2f;
+}
+
+.color-danger:hover,
+.color-danger:focus {
+  background-color: #9a0007;
+}
